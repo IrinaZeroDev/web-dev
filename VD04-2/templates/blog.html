@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Мою веб-сайт</h1>
+        <ul class="nav-menu">
+            {% for item in nav %}
+            <li><a href="{{ item.url }}" {% if current_page == 'blog' and item.url == '/blog' %}class="active"{% endif %}>{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2>Блог</h2>
+        <p>Латестние статьи о веб-разработке на Flask:</p>
+        
+        <section class="blog-posts">
+            {% for post in posts %}
+            <article class="blog-post">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt }}</p>
+                <a href="#" class="read-more">Прочитать дальше</a>
+            </article>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Мою Flask веб-сайт. Все права защищены.</p>
+    </footer>
+</body>
+</html>
