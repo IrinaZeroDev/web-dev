@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Мою веб-сайт</h1>
+        <ul class="nav-menu">
+            {% for item in nav %}
+            <li><a href="{{ item.url }}" {% if current_page == item.url.lstrip('/') or (current_page == 'index' and item.url == '/') %}class="active"{% endif %}>{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Добро пожаловать!</h2>
+            <p>Это пример Flask приложения с несколькими страницами.</p>
+        </section>
+
+        <section class="features">
+            <h3>Основные особенности:</h3>
+            <ul>
+                <li>Удобная навигация меню</li>
+                <li>Выделение активного пункта меню</li>
+                <li>Целые нескольких страниц</li>
+                <li>Постоенная шапка и меню</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Мою Flask веб-сайт. Все права защищены.</p>
+    </footer>
+</body>
+</html>
