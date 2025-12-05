@@ -1,93 +1,93 @@
-# VD08 - Flask Random Quotes API App
+# VD08 - Flask приложение для получения случайных цитат через API
 
-## Description
+## Описание
 
-A simple Flask web application that fetches random quotes from public APIs and displays them on a web page. The application allows users to switch between different quote sources and displays quotes with beautiful Bootstrap styling.
+Простое веб-приложение на Flask, которое получает случайные цитаты из открытых API и отображает их на веб-странице. Приложение позволяет пользователям переключаться между разными источниками цитат и выводит цитаты с красивым оформлением Bootstrap.
 
-## Features
+## Возможности
 
-- **Dual API Integration**: Supports two different quote APIs
+- **Двойная интеграция API**: Поддерживает два разных API для получения цитат
   - ZenQuotes API (https://zenquotes.io/api/random)
   - API Ninjas Quotes API (https://api-ninjas.com/api/quotes)
-- **Beautiful UI**: Bootstrap-based responsive design with gradient backgrounds
-- **Quote Display**: Shows quotes in cards with author information
-- **Error Handling**: Graceful error messages if API calls fail
-- **API Switching**: Users can switch between different quote sources
+- **Красивый интерфейс**: Адаптивный дизайн на Bootstrap с градиентными фонами
+- **Отображение цитат**: Показывает цитаты в карточках с информацией об авторе
+- **Обработка ошибок**: Вывод понятных сообщений об ошибке при сбое API
+- **Переключение API**: Пользователи могут переключаться между разными источниками цитат
 
-## Project Structure
+## Структура проекта
 
 ```
 VD08/
-├── app.py                 # Flask application with API integration
+├── app.py                 # Flask приложение с интеграцией API
 ├── templates/
-│   └── index.html        # HTML template with Bootstrap styling
-└── README.md             # This file
+│   └── index.html        # HTML шаблон с оформлением Bootstrap
+└── README.md             # Этот файл
 ```
 
-## Technologies Used
+## Используемые технологии
 
-- **Python 3**: Programming language
-- **Flask**: Web framework for building the application
-- **Requests**: Library for making HTTP requests to APIs
-- **Bootstrap 5**: CSS framework for responsive design
-- **Jinja2**: Templating engine for HTML rendering
+- **Python 3**: Язык программирования
+- **Flask**: Веб-фреймворк для создания приложения
+- **Requests**: Библиотека для HTTP запросов к API
+- **Bootstrap 5**: CSS фреймворк для адаптивного дизайна
+- **Jinja2**: Шаблонизатор для рендеринга HTML
 
-## Installation & Running
+## Установка и запуск
 
-1. Install required dependencies:
+1. Установите необходимые зависимости:
    ```bash
    pip install flask requests
    ```
 
-2. Run the Flask application:
+2. Запустите Flask приложение:
    ```bash
    python app.py
    ```
 
-3. Open your browser and navigate to:
+3. Откройте браузер и перейдите по адресу:
    ```
    http://localhost:5000
    ```
 
-## How It Works
+## Как это работает
 
-1. **Home Page**: The index route displays a random quote on page load
-2. **Get Quote Buttons**: Click the buttons to fetch quotes from different APIs
-3. **Error Handling**: If an API fails, an error message is displayed
-4. **Responsive Design**: Works on desktop, tablet, and mobile devices
+1. **Главная страница**: Маршрут index отображает случайную цитату при загрузке страницы
+2. **Кнопки получения цитат**: Нажимайте кнопки для получения цитат из разных API
+3. **Обработка ошибок**: Если API не работает, выводится сообщение об ошибке
+4. **Адаптивный дизайн**: Работает на десктопе, планшете и мобильных устройствах
 
-## API Details
+## Детали API
 
 ### ZenQuotes API
 - Endpoint: `https://zenquotes.io/api/random`
-- Returns: Random quote with author
-- Rate Limit: Generous (no strict rate limiting)
+- Возвращает: Случайную цитату с автором
+- Ограничение по запросам: Щедрое (без строгого ограничения)
 
 ### API Ninjas Quotes API
 - Endpoint: `https://api-ninjas.com/api/quotes`
-- Returns: Quote with category information
-- Note: May require API key for higher rate limits
+- Возвращает: Цитату с информацией о категории
+- Примечание: Может требоваться API ключ для повышенного лимита запросов
 
-## Code Highlights
+## Основные части кода
 
-The `app.py` file contains:
-- `get_zen_quote()`: Fetches quotes from ZenQuotes API
-- `get_ninja_quote()`: Fetches quotes from API Ninjas
-- `index()`: Main route that renders the HTML template
-- Error handling with try-except blocks
+Файл `app.py` содержит:
+- `get_zen_quote()`: Получает цитаты из API ZenQuotes
+- `get_ninja_quote()`: Получает цитаты из API Ninjas
+- `index()`: Главный маршрут, который рендерит HTML шаблон
+- Обработка ошибок с блоками try-except
 
-## Future Enhancements
+## Возможные улучшения
 
-- Add more API sources
-- Implement quote favorites/bookmarking
-- Add quote categories filter
-- Database integration for storing favorites
-- User preferences and themes
+- Добавить больше источников API
+- Реализовать избранное и закладки цитат
+- Добавить фильтр по категориям цитат
+- Интеграция с базой данных для сохранения избранного
+- Пользовательские предпочтения и темы
 
-## Author
+## Автор
 
-Created as part of web development coursework (VD08 assignment)
+Создано как часть курса по веб-разработке (задание VD08)
 
-## License
+## Лицензия
 
-Open source - feel free to use and modify
+Открытый исходный код - используйте и изменяйте свободно
