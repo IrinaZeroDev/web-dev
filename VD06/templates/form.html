@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма анкеты</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .form-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        .form-card h1 {
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-group label {
+            color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 30px;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+        .data-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .data-card h5 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .data-card p {
+            margin: 8px 0;
+            color: #555;
+        }
+        .data-label {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Форма -->
+        <div class="form-card">
+            <h1>Анкета пользователя</h1>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">Город:</label>
+                    <input type="text" class="form-control" id="city" name="city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hobby">Хобби:</label>
+                    <input type="text" class="form-control" id="hobby" name="hobby" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Возраст:</label>
+                    <input type="number" class="form-control" id="age" name="age" min="1" max="150" required>
+                </div>
+                
+                <button type="submit" class="btn btn-submit">Отправить</button>
+            </form>
+        </div>
+        
+        <!-- Отображение данных -->
+        {% if users %}
+        <div>
+            <h2 style="color: white; text-align: center; margin-bottom: 30px;">Введенные данные:</h2>
+            {% for user in users %}
+            <div class="data-card">
+                <h5>Анкета #{{ loop.index }}</h5>
+                <p><span class="data-label">Имя:</span> {{ user.name }}</p>
+                <p><span class="data-label">Город:</span> {{ user.city }}</p>
+                <p><span class="data-label">Хобби:</span> {{ user.hobby }}</p>
+                <p><span class="data-label">Возраст:</span> {{ user.age }} лет</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
