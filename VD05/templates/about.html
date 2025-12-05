@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}О сайте{% endblock %}
+
+{% block content %}
+    <div class="about-content">
+        <h2>О нашем проекте</h2>
+        <p>Этот проект создан для демонстрации возможностей Flask рамки и использования наследования Jinja2 шаблонов.</p>
+        
+        <section class="features">
+            <h3>Почему наследование шаблонов?</h3>
+            <p>Наследование шаблонов - это мощный инструмент для:</p>
+            <ul>
+                <li>Написания скалируемых веб-аппликаций</li>
+                <li>Организации шаблонов в иерархию</li>
+                <li>Предотвращению дублирования кода (DRY)</li>
+                <li>Обеспечению актуальности дизайна</li>
+            </ul>
+        </section>
+        
+        <section class="technology">
+            <h3>Миспользуемые технологии:</h3>
+            <ul>
+                <li><strong>Flask</strong> - легкая веб-рамка на Python</li>
+                <li><strong>Jinja2</strong> - энжин отрисовки шаблонов</li>
+                <li><strong>HTML/CSS</strong> - разметка и стили</li>
+            </ul>
+        </section>
+        
+        <section class="contact">
+            <h3>Связанътесь с нами</h3>
+            <p>Если у вас есть вопросы средствами на главной странице!</p>
+        </section>
+    </div>
+{% endblock %}
