@@ -25,7 +25,7 @@ def form_page():
                 'age': age
             })
     
-    # Отображаем темплейт с данными
+    # Отображаем template с данными
     return render_template('form.html', users=users_data)
 
 if __name__ == '__main__':
