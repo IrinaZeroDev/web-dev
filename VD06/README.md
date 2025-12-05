@@ -13,7 +13,7 @@
 
 ```
 VD06/
-├── app.py                 # Flask аппликация
+├── app.py                 # Flask приложение
 ├── README.md              # Этот файл
 └── templates/
     └── form.html          # HTML форма с Bootstrap стилями
