@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        .nav-custom {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-custom a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .home-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .home-card h1 {
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        .btn-action {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 30px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .btn-action:hover {
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-custom">
+        <div class="container">
+            <a href="/">Главная</a>
+            {% if user %}
+                <a href="/profile">Профиль</a>
+                <a href="/logout">Выход</a>
+            {% else %}
+                <a href="/login">Войти</a>
+                <a href="/register">Регистрироваться</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="home-card">
+            {% if user %}
+                <h1>Нормально вошли, {{ user.username }}!</h1>
+                <p>Навидите <a href="/profile">профиль</a> для редактирования данных</p>
+            {% else %}
+                <h1>Welcome! VD07 - Профиль Пенедактир ование</h1>
+                <p>Приложение для редактирования профиля пользователя</p>
+                <br>
+                <a href="/login" class="btn btn-action">Войти</a>
+                <a href="/register" class="btn btn-action">Регистрироваться</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
